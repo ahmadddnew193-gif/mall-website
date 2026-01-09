@@ -250,21 +250,24 @@ const testimonials = [
     name: 'Sarah Johnson',
     rating: 5,
     comment: 'Amazing shopping experience! The mall is beautifully designed and has everything you need.',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah'
+    avatar: 'SJ',
+    color: '#4285F4'
   },
   {
     id: 2,
     name: 'Ahmed Ali',
     rating: 5,
     comment: 'Great variety of stores and excellent customer service. Highly recommended!',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmed'
+    avatar: 'AA',
+    color: '#EA4335'
   },
   {
     id: 3,
     name: 'Maria Garcia',
     rating: 4,
     comment: 'Love the atmosphere and the food court has amazing options. Will definitely come back!',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Maria'
+    avatar: 'MG',
+    color: '#34A853'
   }
 ];
 
@@ -816,11 +819,12 @@ export default function ShoppingMall() {
                 <CardContent className="pt-8 relative z-10">
                   <div className="flex items-center space-x-5 mb-6">
                     <div className="relative">
-                      <img
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        className="w-20 h-20 rounded-full border-4 border-[#D4AF37] group-hover:scale-110 transition-all duration-500 shadow-xl"
-                      />
+                      <div
+                        className="w-20 h-20 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-xl group-hover:scale-110 transition-all duration-500"
+                        style={{ backgroundColor: testimonial.color }}
+                      >
+                        {testimonial.avatar}
+                      </div>
                       <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform duration-500">
                         <Star size={16} className="fill-white text-white" />
                       </div>
@@ -1199,5 +1203,7 @@ export default function ShoppingMall() {
     </div>
   );
 }
+
+
 
 
